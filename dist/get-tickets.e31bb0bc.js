@@ -115725,10 +115725,6 @@ var hammer = [{
   options: ['貓頭鷹', '老鷹', '加藤鷹'],
   anser: 1
 }, {
-  question: '露天成立幾週年？',
-  options: ['10', '11', '12'],
-  anser: 2
-}, {
   question: '露天是否成立於2006年？',
   options: ['是', '否'],
   anser: 0
@@ -115743,10 +115739,6 @@ var hammer = [{
 }, {
   question: '小露露是男生？',
   options: ['我是男生', '我是女生'],
-  anser: 0
-}, {
-  question: '露天兩個字的筆劃加起來總共幾劃？',
-  options: ['25', '26', '27'],
   anser: 0
 }, {
   question: '請問露天在2018年5月推出的新型廣告名稱是？',
@@ -115765,60 +115757,8 @@ var hammer = [{
   options: ['10則', '11則', '12則'],
   anser: 0
 }, {
-  question: '周圍都是男人(猜一句成語)',
-  options: ['左右為難', '愛人以德', '深得人心'],
-  anser: 0
-}, {
-  question: '瞧瞧過去看看未來(猜一句成語)',
-  options: ['放眼望去', '瞻前顧後', '佛眼相看'],
-  anser: 1
-}, {
-  question: '拿鍋蓋蓋在頭上(猜一句成語)',
-  options: ['亂扣帽子', '戴笠乘車', '披星戴月'],
-  anser: 0
-}, {
-  question: '功夫電影(猜一句成語)',
-  options: ['打成一片', '不費工夫', '功夫熊貓'],
-  anser: 0
-}, {
-  question: '有一隻狼來到北極，不小心掉到冰海中，被撈起來時變成了什麼？',
-  options: ['檳榔', '賓狗', '灰狼'],
-  anser: 0
-}, {
-  question: '超人保護地球，那誰保護城市？',
-  options: ['小露露', '螢幕', '一哥'],
-  anser: 1
-}, {
-  question: '你知道獅子、老虎、班馬，誰最愛亂買東西？',
-  options: ['獅子', '老虎', '班馬(黑白馬)'],
-  anser: 2
-}, {
-  question: '什麼水可以放口袋？',
-  options: ['薪水', '口水', '淚水'],
-  anser: 0
-}, {
-  question: '甚麼樣的人不能在加油站打工？',
-  options: ['貌美如花的人', '油腔滑調的人(油槍滑掉)', '英俊瀟灑的人'],
-  anser: 1
-}, {
-  question: '鵝過山洞會變成什麼？',
-  options: ['小嬰兒', '老天鵝', '過動兒 （過洞鵝）'],
-  anser: 2
-}, {
-  question: '誰生了約翰？',
-  options: ['花，因為花生醬(John)', '樹', '草'],
-  anser: 0
-}, {
-  question: '煙火打不打的到星星？',
-  options: ['打的到，因為星星就在那', '打不到，因為星星會閃'],
-  anser: 1
-}, {
   question: '露天粉絲團中的最可愛的吉祥物叫什麼名字？',
   options: ['佛佛', '阿佛', '佛祖'],
-  anser: 0
-}, {
-  question: '以下何者不是露天小編？',
-  options: ['天編', '鳥編', '吉妮'],
   anser: 0
 }];
 var lightSword = [{
@@ -115865,54 +115805,6 @@ var lightSword = [{
   question: '我想要在平台上賣東西，請問成交費怎麼算？',
   options: ['商品結標金額 × 數量 × 0.5％', '商品結標金額 × 數量 × 1.5％', '商品結標金額 × 數量 × 2％'],
   anser: 2
-}, {
-  question: '爸爸胖了，媽媽瘦了',
-  options: ['重男輕女', '肥環燕瘦', '口是心非'],
-  anser: 0
-}, {
-  question: '一個全身穿著金色衣服的人(猜一句成語)',
-  options: ['二八女郎', '一顯身手', '一鳴驚人'],
-  anser: 2
-}, {
-  question: '大象的媽媽為什麼是猩猩，猜一成語',
-  options: ['相得益彰', '相由心生', '相敬如賓'],
-  anser: 1
-}, {
-  question: '第十一本書（猜一句成語）',
-  options: ['不可思議(BOOK11)', '非始不可', '不可多得'],
-  anser: 0
-}, {
-  question: '三國時代哪個人物跑最快？',
-  options: ['曹操，說曹操曹操就到！', '劉備', '孫權'],
-  anser: 0
-}, {
-  question: '可以穿很久的衣服(猜日本地名)',
-  options: ['神奈川', '鬼怒川', '大井川'],
-  anser: 0
-}, {
-  question: '請問綠豆是哪裡人？',
-  options: ['綠豆雲林人', '綠豆嘉義人', '綠豆彰化人'],
-  anser: 1
-}, {
-  question: '胖妞生病最怕被探病說什麼？',
-  options: ['早日康復', '身體健康', '保重'],
-  anser: 2
-}, {
-  question: '什麼瓜不能吃？',
-  options: ['西瓜', '冬瓜', '傻瓜'],
-  anser: 2
-}, {
-  question: '什麼布切不斷？',
-  options: ['抹布', '瀑布', '菜瓜布'],
-  anser: 1
-}, {
-  question: '什麼路不能走？',
-  options: ['仁愛路', '網路', '柏油路'],
-  anser: 1
-}, {
-  question: '木魚掉到海裡，會變成什麼？',
-  options: ['吳郭魚', '虱目魚', '秋刀魚'],
-  anser: 1
 }, {
   question: '小編們的上班時間是？',
   options: ['9:30-18:30', '24小時全年無休', '18:31-9:29'],
@@ -115967,54 +115859,6 @@ var lotion = [{
   options: ['將商品加到追蹤清單', '覺得這個商品好可愛', '幫這個商品加分'],
   anser: 0
 }, {
-  question: '請問老虎叫什麼名字，猜一成語',
-  options: ['虎視眈眈', '虎虎生風', '豺狼虎豹'],
-  anser: 0
-}, {
-  question: '請問烏龜的心長得像什麼？',
-  options: ['倦鳥歸巢', '兔角龜毛', '歸心似箭'],
-  anser: 2
-}, {
-  question: '選美比賽(猜一句成語)',
-  options: ['以貌取人', '國色天姿', '明眸皓齒'],
-  anser: 0
-}, {
-  question: '手機不可以掉到馬桶裡弄溼',
-  options: ['投機取巧', '機不可失', '枉費心機'],
-  anser: 1
-}, {
-  question: '什麼時候1+2不等於3？',
-  options: ['算錯的時候', '算對的時候', '沒有這種時候'],
-  anser: 0
-}, {
-  question: '手中有5隻標，水裡有5隻魚，請問可以射中幾隻魚？',
-  options: ['2隻(三隻魚閃標)', '3隻', '5隻'],
-  anser: 0
-}, {
-  question: '什麼動物最怕冷？',
-  options: ['鴨子(台語：冷冷冷)', '公雞', '鵝'],
-  anser: 0
-}, {
-  question: '大樹跟小樹差在哪裡？',
-  options: ['年紀', '種類', '土裡'],
-  anser: 2
-}, {
-  question: '哪一個月有28天？',
-  options: ['2月', '3月', '每個月都有'],
-  anser: 2
-}, {
-  question: '蚊子不叮什麼動物？',
-  options: ['狗(布丁狗)', '貓', '兔'],
-  anser: 0
-}, {
-  question: '打什麼東西不必花力氣？',
-  options: ['打東東', '打瞌睡', '打地鼠'],
-  anser: 1
-}, {
-  question: '什麼鼠最愛乾淨？',
-  options: ['米老鼠', '天竺鼠', '環保署'],
-  anser: 2
-}, {
   question: '請問粉絲團星期幾會公布當週『熱搜關鍵字』？',
   options: ['星期一', '星期四', '星期六'],
   anser: 2
@@ -116056,10 +115900,6 @@ var branch = [{
   options: ['Deer Sky', 'Ruten', 'Rutan'],
   anser: 1
 }, {
-  question: '每天2場獨家瘋搶限時殺，是幾點開搶？',
-  options: ['上午10:00、下午10:00', '上午8:00、下午8:00', '上午11:00、下午11:00'],
-  anser: 0
-}, {
   question: '熱門搜尋是每日幾點會更新呢？',
   options: ['中午12:00', '下午2:00', '下午8:00'],
   anser: 1
@@ -116067,62 +115907,6 @@ var branch = [{
   question: '把喜歡的商品加到我的最愛後，可以去哪邊看呢？',
   options: ['最愛商品', '追蹤中', '我的最愛'],
   anser: 1
-}, {
-  question: '一顆心值多少元？',
-  options: ['一千', '一萬', '一億(一心一意)'],
-  anser: 2
-}, {
-  question: '要怎樣讓麻雀變安靜，猜一句成語',
-  options: ['門可羅雀', '鴉雀無聲', '雀屏中選'],
-  anser: 1
-}, {
-  question: '一一一一(猜一句成語)',
-  options: ['獨一無二', '一刀兩斷', '一五一十'],
-  anser: 0
-}, {
-  question: '一乘一等於一',
-  options: ['一心一意', '一刻千金', '一乘不變'],
-  anser: 2
-}, {
-  question: '哪個地方不會下雨？',
-  options: ['漢口街', '芝麻街(美語)', '唐人街'],
-  anser: 1
-}, {
-  question: '參加路跑比賽，你追過第二名之後，你是第幾名？',
-  options: ['第一名', '第二名', '第三名'],
-  anser: 1
-}, {
-  question: '世界最長的車是？',
-  options: ['火車', '捷運', '塞車'],
-  anser: 2
-}, {
-  question: '什麼情況下2會大於5，5會大於0，0會大於2？',
-  options: ['算數的時候', '猜拳的時候'],
-  anser: 1
-}, {
-  question: '鯊魚不小心吞了一顆綠豆，牠變成了什麼？',
-  options: ['紅豆冰', '綠豆沙', '黑豆水'],
-  anser: 1
-}, {
-  question: '一隻牛頭朝東請問尾巴朝哪邊？',
-  options: ['朝西', '朝南', '朝下'],
-  anser: 2
-}, {
-  question: '公雞生病，誰來照顧？',
-  options: ['你', '姊姊', '姑姑 (姑姑顧)'],
-  anser: 2
-}, {
-  question: '大象的媽媽是誰？',
-  options: ['猩猩(象由心生)', '猴子', '狒狒'],
-  anser: 0
-}, {
-  question: '以下何者小編還沒有去採訪過？',
-  options: ['GameBox', '萬年東海', '必買站'],
-  anser: 1
-}, {
-  question: '小編中秋節的時候，是否有在公司烤過甕仔雞？',
-  options: ['有的，又香又油又好吃', '沒有，公司不給烤'],
-  anser: 0
 }];
 var _default = {
   hammer: hammer,
@@ -116636,8 +116420,8 @@ function init() {
 
 function home() {
   var weapon = null,
-      clouds = null,
-      cloudsFront = null,
+      // clouds = null,
+  cloudsFront = null,
       weaponList = null;
 
   this.create = function () {
@@ -116645,31 +116429,27 @@ function home() {
 
     document.getElementsByTagName('body')[0].style.backgroundColor = '#333';
     if (IS_MOBILE) document.getElementsByTagName('body')[0].classList.add('liner-background');
-    this.stage.backgroundColor = '#8adbff';
-    clouds = game.add.physicsGroup();
-
-    for (var i = 0; i < 5; i += 1) {
-      var cloudType = ['cloud', 'cloud2'];
-      var cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)]);
-      cloud.anchor.set(0.5);
-      cloud.scale.set(0.2);
-      cloud.body.velocity.x = game.rnd.between(-10, -30);
-    } // let title = game.add.sprite(game.world.centerX, -100, 'title')
-
+    this.stage.backgroundColor = '#8adbff'; // clouds = game.add.physicsGroup()
+    // for (let i = 0; i < 5; i+=1) {
+    //   let cloudType = ['cloud', 'cloud2']
+    //   let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
+    //   cloud.anchor.set(0.5)
+    //   cloud.scale.set(0.2)
+    //   cloud.body.velocity.x = game.rnd.between(-10, -30)
+    // }
+    // let title = game.add.sprite(game.world.centerX, -100, 'title')
 
     var title = game.add.sprite(game.world.centerX, 100, 'title');
     title.anchor.set(0.5);
     title.scale.set(0.3); // game.add.tween(title).to( { y: 100 }, 3000, Phaser.Easing.Bounce.Out, true, 1500)
+    // let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
+    // island.anchor.set(0.5)
+    // island.scale.set(0.28)
+    // game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
+    // let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
+    // coffee.anchor.set(0.5)
+    // coffee.scale.set(0.4)
 
-    var island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island');
-    island.anchor.set(0.5);
-    island.scale.set(0.28);
-    game.add.tween(island).to({
-      y: island.y - 15
-    }, 2000, Phaser.Easing.Linear.None, true, 0, -1, true);
-    var coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee');
-    coffee.anchor.set(0.5);
-    coffee.scale.set(0.4);
     var lightSword = game.add.button(game.world.centerX + 150, 170 + game.world.centerY, 'light_sword', function () {}, this, 2, 1, 0);
     lightSword.isPlayed = isPlayed.lightSword;
     lightSword.dude = 'white_soldier';
@@ -116730,21 +116510,15 @@ function home() {
       //     game.state.start('play', true, false, weapon.dude)
       //   })
       // }
-    });
-    cloudsFront = game.add.physicsGroup();
-
-    for (var _i = 0; _i < 3; _i += 1) {
-      var _cloudType = ['cloud', 'cloud2'];
-
-      var _cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), _cloudType[game.rnd.between(0, 1)]);
-
-      _cloud.anchor.set(0.5);
-
-      _cloud.scale.set(0.18); // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
-
-
-      _cloud.body.velocity.x = game.rnd.between(-10, -65);
-    }
+    }); // cloudsFront = game.add.physicsGroup()
+    // for (let i = 0; i < 3; i+=1) {
+    //   let cloudType = ['cloud', 'cloud2']
+    //   let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
+    //   cloud.anchor.set(0.5)
+    //   cloud.scale.set(0.18)
+    //   // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
+    //   cloud.body.velocity.x = game.rnd.between(-10, -65)
+    // }
 
     var hintPopup = {
       name: 'ticket5',
@@ -116763,22 +116537,21 @@ function home() {
     }; // game.time.events.add(5000, ()=> { showPopup(hintPopup) })
 
     showPopup(hintPopup);
-  };
+  }; // this.update = function() {
+  //   clouds.forEach((cloud) => {
+  //     if(cloud.x < -100) {
+  //       cloud.x = game.world.width + 100
+  //       cloud.y = _cloudPosY()
+  //     }
+  //   }, this)
+  //   cloudsFront.forEach((cloud) => {
+  //     if(cloud.x < -100) {
+  //       cloud.x = game.world.width + 100
+  //       cloud.y = _cloudFrontPosY()
+  //     }
+  //   }, this)
+  // }
 
-  this.update = function () {
-    clouds.forEach(function (cloud) {
-      if (cloud.x < -100) {
-        cloud.x = game.world.width + 100;
-        cloud.y = _cloudPosY();
-      }
-    }, this);
-    cloudsFront.forEach(function (cloud) {
-      if (cloud.x < -100) {
-        cloud.x = game.world.width + 100;
-        cloud.y = _cloudFrontPosY();
-      }
-    }, this);
-  };
 
   this.render = function () {};
 

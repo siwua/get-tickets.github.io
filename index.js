@@ -378,7 +378,7 @@ function init() {
 function home() {
   let
     weapon = null,
-    clouds = null,
+    // clouds = null,
     cloudsFront = null,
     weaponList = null
 
@@ -387,15 +387,15 @@ function home() {
     if(IS_MOBILE) document.getElementsByTagName('body')[0].classList.add('liner-background')
     this.stage.backgroundColor = '#8adbff'
 
-    clouds = game.add.physicsGroup()
+    // clouds = game.add.physicsGroup()
 
-    for (let i = 0; i < 5; i+=1) {
-      let cloudType = ['cloud', 'cloud2']
-      let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
-      cloud.anchor.set(0.5)
-      cloud.scale.set(0.2)
-      cloud.body.velocity.x = game.rnd.between(-10, -30)
-    }
+    // for (let i = 0; i < 5; i+=1) {
+    //   let cloudType = ['cloud', 'cloud2']
+    //   let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
+    //   cloud.anchor.set(0.5)
+    //   cloud.scale.set(0.2)
+    //   cloud.body.velocity.x = game.rnd.between(-10, -30)
+    // }
 
     // let title = game.add.sprite(game.world.centerX, -100, 'title')
     let title = game.add.sprite(game.world.centerX, 100, 'title')
@@ -403,14 +403,14 @@ function home() {
     title.scale.set(0.3)
     // game.add.tween(title).to( { y: 100 }, 3000, Phaser.Easing.Bounce.Out, true, 1500)
 
-    let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
-    island.anchor.set(0.5)
-    island.scale.set(0.28)
-    game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
+    // let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
+    // island.anchor.set(0.5)
+    // island.scale.set(0.28)
+    // game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
 
-    let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
-    coffee.anchor.set(0.5)
-    coffee.scale.set(0.4)
+    // let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
+    // coffee.anchor.set(0.5)
+    // coffee.scale.set(0.4)
 
     let lightSword = game.add.button(game.world.centerX + 150, 170 + game.world.centerY, 'light_sword', ()=>{}, this, 2, 1, 0)
     lightSword.isPlayed = isPlayed.lightSword
@@ -482,16 +482,16 @@ function home() {
       // }
     })
 
-    cloudsFront = game.add.physicsGroup()
+    // cloudsFront = game.add.physicsGroup()
 
-    for (let i = 0; i < 3; i+=1) {
-      let cloudType = ['cloud', 'cloud2']
-      let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
-      cloud.anchor.set(0.5)
-      cloud.scale.set(0.18)
-      // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
-      cloud.body.velocity.x = game.rnd.between(-10, -65)
-    }
+    // for (let i = 0; i < 3; i+=1) {
+    //   let cloudType = ['cloud', 'cloud2']
+    //   let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
+    //   cloud.anchor.set(0.5)
+    //   cloud.scale.set(0.18)
+    //   // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
+    //   cloud.body.velocity.x = game.rnd.between(-10, -65)
+    // }
 
     let hintPopup = {
       name: 'ticket5',
@@ -508,20 +508,20 @@ function home() {
     showPopup(hintPopup)
   }
 
-  this.update = function() {
-    clouds.forEach((cloud) => {
-      if(cloud.x < -100) {
-        cloud.x = game.world.width + 100
-        cloud.y = _cloudPosY()
-      }
-    }, this)
-    cloudsFront.forEach((cloud) => {
-      if(cloud.x < -100) {
-        cloud.x = game.world.width + 100
-        cloud.y = _cloudFrontPosY()
-      }
-    }, this)
-  }
+  // this.update = function() {
+  //   clouds.forEach((cloud) => {
+  //     if(cloud.x < -100) {
+  //       cloud.x = game.world.width + 100
+  //       cloud.y = _cloudPosY()
+  //     }
+  //   }, this)
+  //   cloudsFront.forEach((cloud) => {
+  //     if(cloud.x < -100) {
+  //       cloud.x = game.world.width + 100
+  //       cloud.y = _cloudFrontPosY()
+  //     }
+  //   }, this)
+  // }
 
   this.render = function() {
   }

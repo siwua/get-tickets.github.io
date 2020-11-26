@@ -11,11 +11,7 @@ import {saveAward, checkPermission, checkLogin} from '/src/js/service/coin.js'
 import iconUrl from '/src/assets/icon.png'
 import icon1111Url from '/src/assets/icon_1111.png'
 
-// import hammer from '/src/assets/hammer.png'
-
 // import Gray from '/src/js/filters/gray.js'
-// console.log(iconUrl)
-// console.log(hammer)
 const
   DEFAULT_FONT = 'Microsoft JhengHei',
   MAX_WIDTH = 640,
@@ -212,7 +208,6 @@ function slash() {
     this.load.image('loading_icon', '/src/assets/loading_icon.png')
     this.load.image('cloud', '/src/assets/cloud.png');
     this.load.image('cloud2', '/src/assets/cloud2.png');
-    console.log(this.load.image)
   }
   this.create = function() {
     this.stage.backgroundColor = '#8adbff'

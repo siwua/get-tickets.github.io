@@ -116258,8 +116258,6 @@ function _formatJsend(response) {
 module.exports = "/icon.7a45658c.png";
 },{}],"src/assets/icon_1111.png":[function(require,module,exports) {
 module.exports = "/icon_1111.e0aafbc4.png";
-},{}],"src/assets/hammer.png":[function(require,module,exports) {
-module.exports = "/hammer.7c8a448e.png";
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -116278,8 +116276,6 @@ var _coin = require("/src/js/service/coin.js");
 var _icon = _interopRequireDefault(require("/src/assets/icon.png"));
 
 var _icon_ = _interopRequireDefault(require("/src/assets/icon_1111.png"));
-
-var _hammer = _interopRequireDefault(require("/src/assets/hammer.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -116309,8 +116305,6 @@ window.PIXI = require('phaser-ce/build/custom/pixi');
 window.p2 = require('phaser-ce/build/custom/p2');
 window.Phaser = require('phaser-ce/build/custom/phaser-split');
 // import Gray from '/src/js/filters/gray.js'
-console.log(_icon.default);
-console.log(_hammer.default);
 var DEFAULT_FONT = 'Microsoft JhengHei',
     MAX_WIDTH = 640,
     MAX_HEIGHT = 820,
@@ -116497,7 +116491,6 @@ function slash() {
     this.load.image('loading_icon', '/src/assets/loading_icon.png');
     this.load.image('cloud', '/src/assets/cloud.png');
     this.load.image('cloud2', '/src/assets/cloud2.png');
-    console.log(this.load.image);
   };
 
   this.create = function () {
@@ -116576,8 +116569,11 @@ function init() {
     this.load.image('paper', '/src/assets/paper.png'); // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
 
     this.load.onLoadStart.add(loadStart, this);
-    this.load.onFileComplete.add(fileComplete, this);
-    this.load.onLoadComplete.add(loadComplete, this);
+    this.load.onFileComplete.add(fileComplete, this); // this.load.onLoadComplete.add(loadComplete, this);
+
+    this.load.onLoadComplete.add(function () {
+      return setTimeout(loadComplete, 500);
+    }, this);
   };
 
   function loadStart() {
@@ -117225,7 +117221,7 @@ function filterText(text, num) {
     }
   });
 }
-},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/utils/simpleCookies.js":"src/js/utils/simpleCookies.js","/src/js/service/questions.js":"src/js/service/questions.js","/src/js/service/coin.js":"src/js/service/coin.js","/src/assets/icon.png":"src/assets/icon.png","/src/assets/icon_1111.png":"src/assets/icon_1111.png","/src/assets/hammer.png":"src/assets/hammer.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/utils/simpleCookies.js":"src/js/utils/simpleCookies.js","/src/js/service/questions.js":"src/js/service/questions.js","/src/js/service/coin.js":"src/js/service/coin.js","/src/assets/icon.png":"src/assets/icon.png","/src/assets/icon_1111.png":"src/assets/icon_1111.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -117253,7 +117249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34988" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53508" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

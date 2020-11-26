@@ -304,7 +304,7 @@ function init() {
     // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this);
-    // this.load.onLoadComplete.add(loadComplete, this);
+    this.load.onLoadComplete.add(loadComplete, this);
   }
 
   function loadStart() {
@@ -316,7 +316,9 @@ function init() {
   function fileComplete(progress, cacheKey, success, totalLoaded, totalFiles) {
     // text.setText("File Complete: " + progress + "% - " + totalLoaded + " out of " + totalFiles);
   }
-  function loadComplete() {}
+  function loadComplete() {
+    game.state.start('home')
+  }
 //   function loadComplete() {
 //     if (isDeadline) {
 //       // text.setText("Load Complete");
@@ -444,29 +446,40 @@ function home() {
         target.scale.set(0.235)
       }, this)
 
-      if(weapon.isPlayed) {
-        this.filterGray = new Gray(this.game)
-        weapon.filters = [this.filterGray]
-        weapon.onInputUp.add(function(target) {
-          target.scale.set(0.25)
-          alert('本日已領過彩票囉！快去其他關卡挑戰拿彩票吧～')
+      game.time.events.loop(3000 + game.rnd.between(0, 3000), ()=> {
+        let tween = game.add.tween(weapon).to( { y: weapon.y - 15 }, 500, Phaser.Easing.Bounce.Out, true)
+        tween.onComplete.add(function(target) {
+          game.add.tween(target).to( { y: target.y + 15 }, 100, Phaser.Easing.Linear.None, true)
         })
-      } else {
+      })
 
-        game.time.events.loop(3000 + game.rnd.between(0, 3000), ()=> {
-          let tween = game.add.tween(weapon).to( { y: weapon.y - 15 }, 500, Phaser.Easing.Bounce.Out, true)
-          tween.onComplete.add(function(target) {
-            game.add.tween(target).to( { y: target.y + 15 }, 100, Phaser.Easing.Linear.None, true)
-          })
-        })
+      weapon.onInputUp.add(function(target) {
+        target.scale.set(0.25)
+        game.state.start('play', true, false, weapon.dude)
+      })
+      // if(weapon.isPlayed) {
+      //   this.filterGray = new Gray(this.game)
+      //   weapon.filters = [this.filterGray]
+      //   weapon.onInputUp.add(function(target) {
+      //     target.scale.set(0.25)
+      //     alert('本日已領過彩票囉！快去其他關卡挑戰拿彩票吧～')
+      //   })
+      // } else {
 
-        weapon.onInputUp.add(function(target) {
-          target.scale.set(0.25)
-          game.state.start('play', true, false, weapon.dude)
-        })
+      //   game.time.events.loop(3000 + game.rnd.between(0, 3000), ()=> {
+      //     let tween = game.add.tween(weapon).to( { y: weapon.y - 15 }, 500, Phaser.Easing.Bounce.Out, true)
+      //     tween.onComplete.add(function(target) {
+      //       game.add.tween(target).to( { y: target.y + 15 }, 100, Phaser.Easing.Linear.None, true)
+      //     })
+      //   })
+
+      //   weapon.onInputUp.add(function(target) {
+      //     target.scale.set(0.25)
+      //     game.state.start('play', true, false, weapon.dude)
+      //   })
 
 
-      }
+      // }
     })
 
     cloudsFront = game.add.physicsGroup()

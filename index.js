@@ -8,10 +8,11 @@ import '/src/js/utils/jquery-1.7.1.min.js'
 import {setCookie, getCookie} from '/src/js/utils/simpleCookies.js'
 import questions from '/src/js/service/questions.js'
 import {saveAward, checkPermission, checkLogin} from '/src/js/service/coin.js'
-import iconUrl from '/src/assets/icon.png'
-import icon1111Url from '/src/assets/icon_1111.png'
-
+import iconUrl from './src/assets/icon.png'
+import icon1111Url from './src/assets/icon_1111.png'
+import images from './src/assets/*.png'
 // import Gray from '/src/js/filters/gray.js'
+
 const
   DEFAULT_FONT = 'Microsoft JhengHei',
   MAX_WIDTH = 640,
@@ -204,10 +205,10 @@ function slash() {
     this.scale.maxWidth = MAX_WIDTH
     this.scale.maxHeight = MAX_HEIGHT
 
-    this.load.image('loading_fiture', '/src/assets/loading_fiture.png')
-    this.load.image('loading_icon', '/src/assets/loading_icon.png')
-    this.load.image('cloud', '/src/assets/cloud.png');
-    this.load.image('cloud2', '/src/assets/cloud2.png');
+    this.load.image('loading_fiture', images.loading_fiture)
+    this.load.image('loading_icon', images.loading_icon)
+    this.load.image('cloud', images.cloud)
+    this.load.image('cloud2', images.cloud2)
   }
   this.create = function() {
     this.stage.backgroundColor = '#8adbff'
@@ -275,31 +276,31 @@ function init() {
     // this.input.touch.preventDefault = false;
 
     // this.stage.backgroundColor = '#182d3b';
-    this.load.image('button', '/src/assets/game_btn.png');
-    this.load.image('title', '/src/assets/title.png');
-    this.load.image('island', '/src/assets/island.png');
-    this.load.image('coffee', '/src/assets/coffee.png');
-    this.load.image('harry', '/src/assets/harry.png');
-    this.load.image('princess', '/src/assets/princess.png');
-    this.load.image('thunder', '/src/assets/thunder.png');
-    this.load.image('white_soldier', '/src/assets/white_soldier.png');
-    this.load.image('harry_bg', '/src/assets/harry_bg.png');
-    this.load.image('princess_bg', '/src/assets/princess_bg.png');
-    this.load.image('thunder_bg', '/src/assets/thunder_bg.png');
-    this.load.image('white_soldier_bg', '/src/assets/white_soldier_bg.png');
-    this.load.image('branch', '/src/assets/branch.png');
-    this.load.image('lotion', '/src/assets/lotion.png');
-    this.load.image('hammer', '/src/assets/hammer.png');
-    this.load.image('light_sword', '/src/assets/light_sword.png');
-    this.load.image('bn6', '/src/assets/bn6.png');
-    this.load.image('bn7', '/src/assets/bn7.png');
-    this.load.image('ticket1', '/src/assets/ticket1.png');
-    this.load.image('ticket2', '/src/assets/ticket2.png');
-    this.load.image('ticket3', '/src/assets/ticket3.png');
-    this.load.image('ticket4', '/src/assets/ticket4.png');
-    this.load.image('ticket5', '/src/assets/ticket5.png');
-    this.load.image('close_btn', '/src/assets/close_btn.png');
-    this.load.image('paper', '/src/assets/paper.png');
+    this.load.image('button', images.game_btn);
+    this.load.image('title', images.title);
+    this.load.image('island', images.island);
+    this.load.image('coffee', images.coffee);
+    this.load.image('harry', images.harry);
+    this.load.image('princess', images.princess);
+    this.load.image('thunder', images.thunder);
+    this.load.image('white_soldier', images.white_soldier);
+    this.load.image('harry_bg', images.harry_bg);
+    this.load.image('princess_bg', images.princess_bg);
+    this.load.image('thunder_bg', images.thunder_bg);
+    this.load.image('white_soldier_bg', images.white_soldier_bg);
+    this.load.image('branch', images.branch);
+    this.load.image('lotion', images.lotion);
+    this.load.image('hammer', images.hammer);
+    this.load.image('light_sword', images.light_sword);
+    this.load.image('bn6', images.bn6);
+    this.load.image('bn7', images.bn7);
+    this.load.image('ticket1', images.ticket1);
+    this.load.image('ticket2', images.ticket2);
+    this.load.image('ticket3', images.ticket3);
+    this.load.image('ticket4', images.ticket4);
+    this.load.image('ticket5', images.ticket5);
+    this.load.image('close_btn', images.close_btn)
+    this.load.image('paper', images.paper)
 
     // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
     this.load.onLoadStart.add(loadStart, this);
@@ -378,7 +379,7 @@ function init() {
 function home() {
   let
     weapon = null,
-    // clouds = null,
+    clouds = null,
     cloudsFront = null,
     weaponList = null
 
@@ -387,15 +388,15 @@ function home() {
     if(IS_MOBILE) document.getElementsByTagName('body')[0].classList.add('liner-background')
     this.stage.backgroundColor = '#8adbff'
 
-    // clouds = game.add.physicsGroup()
+    clouds = game.add.physicsGroup()
 
-    // for (let i = 0; i < 5; i+=1) {
-    //   let cloudType = ['cloud', 'cloud2']
-    //   let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
-    //   cloud.anchor.set(0.5)
-    //   cloud.scale.set(0.2)
-    //   cloud.body.velocity.x = game.rnd.between(-10, -30)
-    // }
+    for (let i = 0; i < 5; i+=1) {
+      let cloudType = ['cloud', 'cloud2']
+      let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
+      cloud.anchor.set(0.5)
+      cloud.scale.set(0.2)
+      cloud.body.velocity.x = game.rnd.between(-10, -30)
+    }
 
     // let title = game.add.sprite(game.world.centerX, -100, 'title')
     let title = game.add.sprite(game.world.centerX, 100, 'title')
@@ -403,14 +404,14 @@ function home() {
     title.scale.set(0.3)
     // game.add.tween(title).to( { y: 100 }, 3000, Phaser.Easing.Bounce.Out, true, 1500)
 
-    // let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
-    // island.anchor.set(0.5)
-    // island.scale.set(0.28)
-    // game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
+    let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
+    island.anchor.set(0.5)
+    island.scale.set(0.28)
+    game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
 
-    // let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
-    // coffee.anchor.set(0.5)
-    // coffee.scale.set(0.4)
+    let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
+    coffee.anchor.set(0.5)
+    coffee.scale.set(0.4)
 
     let lightSword = game.add.button(game.world.centerX + 150, 170 + game.world.centerY, 'light_sword', ()=>{}, this, 2, 1, 0)
     lightSword.isPlayed = isPlayed.lightSword
@@ -482,16 +483,16 @@ function home() {
       // }
     })
 
-    // cloudsFront = game.add.physicsGroup()
+    cloudsFront = game.add.physicsGroup()
 
-    // for (let i = 0; i < 3; i+=1) {
-    //   let cloudType = ['cloud', 'cloud2']
-    //   let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
-    //   cloud.anchor.set(0.5)
-    //   cloud.scale.set(0.18)
-    //   // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
-    //   cloud.body.velocity.x = game.rnd.between(-10, -65)
-    // }
+    for (let i = 0; i < 3; i+=1) {
+      let cloudType = ['cloud', 'cloud2']
+      let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
+      cloud.anchor.set(0.5)
+      cloud.scale.set(0.18)
+      // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
+      cloud.body.velocity.x = game.rnd.between(-10, -65)
+    }
 
     let hintPopup = {
       name: 'ticket5',
@@ -508,20 +509,20 @@ function home() {
     showPopup(hintPopup)
   }
 
-  // this.update = function() {
-  //   clouds.forEach((cloud) => {
-  //     if(cloud.x < -100) {
-  //       cloud.x = game.world.width + 100
-  //       cloud.y = _cloudPosY()
-  //     }
-  //   }, this)
-  //   cloudsFront.forEach((cloud) => {
-  //     if(cloud.x < -100) {
-  //       cloud.x = game.world.width + 100
-  //       cloud.y = _cloudFrontPosY()
-  //     }
-  //   }, this)
-  // }
+  this.update = function() {
+    clouds.forEach((cloud) => {
+      if(cloud.x < -100) {
+        cloud.x = game.world.width + 100
+        cloud.y = _cloudPosY()
+      }
+    }, this)
+    cloudsFront.forEach((cloud) => {
+      if(cloud.x < -100) {
+        cloud.x = game.world.width + 100
+        cloud.y = _cloudFrontPosY()
+      }
+    }, this)
+  }
 
   this.render = function() {
   }

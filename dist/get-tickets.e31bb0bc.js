@@ -116042,7 +116042,102 @@ function _formatJsend(response) {
 module.exports = "/icon.7a45658c.png";
 },{}],"src/assets/icon_1111.png":[function(require,module,exports) {
 module.exports = "/icon_1111.e0aafbc4.png";
-},{}],"index.js":[function(require,module,exports) {
+},{}],"src/assets/bn6.png":[function(require,module,exports) {
+module.exports = "/bn6.fbbc6f08.png";
+},{}],"src/assets/bn7.png":[function(require,module,exports) {
+module.exports = "/bn7.571777b4.png";
+},{}],"src/assets/branch.png":[function(require,module,exports) {
+module.exports = "/branch.2c826a08.png";
+},{}],"src/assets/close_btn.png":[function(require,module,exports) {
+module.exports = "/close_btn.9102e0d7.png";
+},{}],"src/assets/cloud.png":[function(require,module,exports) {
+module.exports = "/cloud.8831f6ff.png";
+},{}],"src/assets/cloud2.png":[function(require,module,exports) {
+module.exports = "/cloud2.6e27cf86.png";
+},{}],"src/assets/coffee.png":[function(require,module,exports) {
+module.exports = "/coffee.f5fe6189.png";
+},{}],"src/assets/game_btn.png":[function(require,module,exports) {
+module.exports = "/game_btn.9fa27099.png";
+},{}],"src/assets/hammer.png":[function(require,module,exports) {
+module.exports = "/hammer.7c8a448e.png";
+},{}],"src/assets/harry.png":[function(require,module,exports) {
+module.exports = "/harry.2ba85b64.png";
+},{}],"src/assets/harry_bg.png":[function(require,module,exports) {
+module.exports = "/harry_bg.5e707960.png";
+},{}],"src/assets/island.png":[function(require,module,exports) {
+module.exports = "/island.874be7b6.png";
+},{}],"src/assets/light_sword.png":[function(require,module,exports) {
+module.exports = "/light_sword.8f652334.png";
+},{}],"src/assets/loading_fiture.png":[function(require,module,exports) {
+module.exports = "/loading_fiture.3df7ee55.png";
+},{}],"src/assets/loading_icon.png":[function(require,module,exports) {
+module.exports = "/loading_icon.5a6c2d48.png";
+},{}],"src/assets/logo.png":[function(require,module,exports) {
+module.exports = "/logo.8244f1f8.png";
+},{}],"src/assets/lotion.png":[function(require,module,exports) {
+module.exports = "/lotion.e91bf525.png";
+},{}],"src/assets/paper.png":[function(require,module,exports) {
+module.exports = "/paper.1f1b6358.png";
+},{}],"src/assets/princess.png":[function(require,module,exports) {
+module.exports = "/princess.39f72db7.png";
+},{}],"src/assets/princess_bg.png":[function(require,module,exports) {
+module.exports = "/princess_bg.d7f8bb74.png";
+},{}],"src/assets/thunder.png":[function(require,module,exports) {
+module.exports = "/thunder.170344fc.png";
+},{}],"src/assets/thunder_bg.png":[function(require,module,exports) {
+module.exports = "/thunder_bg.9f168812.png";
+},{}],"src/assets/ticket1.png":[function(require,module,exports) {
+module.exports = "/ticket1.5c748a03.png";
+},{}],"src/assets/ticket2.png":[function(require,module,exports) {
+module.exports = "/ticket2.252a940f.png";
+},{}],"src/assets/ticket3.png":[function(require,module,exports) {
+module.exports = "/ticket3.1240273c.png";
+},{}],"src/assets/ticket4.png":[function(require,module,exports) {
+module.exports = "/ticket4.bf8249b7.png";
+},{}],"src/assets/ticket5.png":[function(require,module,exports) {
+module.exports = "/ticket5.199315b5.png";
+},{}],"src/assets/title.png":[function(require,module,exports) {
+module.exports = "/title.d9588fe5.png";
+},{}],"src/assets/white_soldier.png":[function(require,module,exports) {
+module.exports = "/white_soldier.1f95c439.png";
+},{}],"src/assets/white_soldier_bg.png":[function(require,module,exports) {
+module.exports = "/white_soldier_bg.94f9bdf0.png";
+},{}],"src/assets/*.png":[function(require,module,exports) {
+module.exports = {
+  "bn6": require("./bn6.png"),
+  "bn7": require("./bn7.png"),
+  "branch": require("./branch.png"),
+  "close_btn": require("./close_btn.png"),
+  "cloud": require("./cloud.png"),
+  "cloud2": require("./cloud2.png"),
+  "coffee": require("./coffee.png"),
+  "game_btn": require("./game_btn.png"),
+  "hammer": require("./hammer.png"),
+  "harry": require("./harry.png"),
+  "harry_bg": require("./harry_bg.png"),
+  "icon": require("./icon.png"),
+  "icon_1111": require("./icon_1111.png"),
+  "island": require("./island.png"),
+  "light_sword": require("./light_sword.png"),
+  "loading_fiture": require("./loading_fiture.png"),
+  "loading_icon": require("./loading_icon.png"),
+  "logo": require("./logo.png"),
+  "lotion": require("./lotion.png"),
+  "paper": require("./paper.png"),
+  "princess": require("./princess.png"),
+  "princess_bg": require("./princess_bg.png"),
+  "thunder": require("./thunder.png"),
+  "thunder_bg": require("./thunder_bg.png"),
+  "ticket1": require("./ticket1.png"),
+  "ticket2": require("./ticket2.png"),
+  "ticket3": require("./ticket3.png"),
+  "ticket4": require("./ticket4.png"),
+  "ticket5": require("./ticket5.png"),
+  "title": require("./title.png"),
+  "white_soldier": require("./white_soldier.png"),
+  "white_soldier_bg": require("./white_soldier_bg.png")
+};
+},{"./bn6.png":"src/assets/bn6.png","./bn7.png":"src/assets/bn7.png","./branch.png":"src/assets/branch.png","./close_btn.png":"src/assets/close_btn.png","./cloud.png":"src/assets/cloud.png","./cloud2.png":"src/assets/cloud2.png","./coffee.png":"src/assets/coffee.png","./game_btn.png":"src/assets/game_btn.png","./hammer.png":"src/assets/hammer.png","./harry.png":"src/assets/harry.png","./harry_bg.png":"src/assets/harry_bg.png","./icon.png":"src/assets/icon.png","./icon_1111.png":"src/assets/icon_1111.png","./island.png":"src/assets/island.png","./light_sword.png":"src/assets/light_sword.png","./loading_fiture.png":"src/assets/loading_fiture.png","./loading_icon.png":"src/assets/loading_icon.png","./logo.png":"src/assets/logo.png","./lotion.png":"src/assets/lotion.png","./paper.png":"src/assets/paper.png","./princess.png":"src/assets/princess.png","./princess_bg.png":"src/assets/princess_bg.png","./thunder.png":"src/assets/thunder.png","./thunder_bg.png":"src/assets/thunder_bg.png","./ticket1.png":"src/assets/ticket1.png","./ticket2.png":"src/assets/ticket2.png","./ticket3.png":"src/assets/ticket3.png","./ticket4.png":"src/assets/ticket4.png","./ticket5.png":"src/assets/ticket5.png","./title.png":"src/assets/title.png","./white_soldier.png":"src/assets/white_soldier.png","./white_soldier_bg.png":"src/assets/white_soldier_bg.png"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("promise-polyfill/src/polyfill");
@@ -116057,9 +116152,11 @@ var _questions = _interopRequireDefault(require("/src/js/service/questions.js"))
 
 var _coin = require("/src/js/service/coin.js");
 
-var _icon = _interopRequireDefault(require("/src/assets/icon.png"));
+var _icon = _interopRequireDefault(require("./src/assets/icon.png"));
 
-var _icon_ = _interopRequireDefault(require("/src/assets/icon_1111.png"));
+var _icon_ = _interopRequireDefault(require("./src/assets/icon_1111.png"));
+
+var _ = _interopRequireDefault(require("./src/assets/*.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -116271,10 +116368,10 @@ function slash() {
 
     this.scale.maxWidth = MAX_WIDTH;
     this.scale.maxHeight = MAX_HEIGHT;
-    this.load.image('loading_fiture', '/src/assets/loading_fiture.png');
-    this.load.image('loading_icon', '/src/assets/loading_icon.png');
-    this.load.image('cloud', '/src/assets/cloud.png');
-    this.load.image('cloud2', '/src/assets/cloud2.png');
+    this.load.image('loading_fiture', _.default.loading_fiture);
+    this.load.image('loading_icon', _.default.loading_icon);
+    this.load.image('cloud', _.default.cloud);
+    this.load.image('cloud2', _.default.cloud2);
   };
 
   this.create = function () {
@@ -116326,31 +116423,31 @@ function init() {
     // this.scale.fullScreenScaleMode = Phaser.ScaleManager.RESIZE;
     // this.input.touch.preventDefault = false;
     // this.stage.backgroundColor = '#182d3b';
-    this.load.image('button', '/src/assets/game_btn.png');
-    this.load.image('title', '/src/assets/title.png');
-    this.load.image('island', '/src/assets/island.png');
-    this.load.image('coffee', '/src/assets/coffee.png');
-    this.load.image('harry', '/src/assets/harry.png');
-    this.load.image('princess', '/src/assets/princess.png');
-    this.load.image('thunder', '/src/assets/thunder.png');
-    this.load.image('white_soldier', '/src/assets/white_soldier.png');
-    this.load.image('harry_bg', '/src/assets/harry_bg.png');
-    this.load.image('princess_bg', '/src/assets/princess_bg.png');
-    this.load.image('thunder_bg', '/src/assets/thunder_bg.png');
-    this.load.image('white_soldier_bg', '/src/assets/white_soldier_bg.png');
-    this.load.image('branch', '/src/assets/branch.png');
-    this.load.image('lotion', '/src/assets/lotion.png');
-    this.load.image('hammer', '/src/assets/hammer.png');
-    this.load.image('light_sword', '/src/assets/light_sword.png');
-    this.load.image('bn6', '/src/assets/bn6.png');
-    this.load.image('bn7', '/src/assets/bn7.png');
-    this.load.image('ticket1', '/src/assets/ticket1.png');
-    this.load.image('ticket2', '/src/assets/ticket2.png');
-    this.load.image('ticket3', '/src/assets/ticket3.png');
-    this.load.image('ticket4', '/src/assets/ticket4.png');
-    this.load.image('ticket5', '/src/assets/ticket5.png');
-    this.load.image('close_btn', '/src/assets/close_btn.png');
-    this.load.image('paper', '/src/assets/paper.png'); // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
+    this.load.image('button', _.default.game_btn);
+    this.load.image('title', _.default.title);
+    this.load.image('island', _.default.island);
+    this.load.image('coffee', _.default.coffee);
+    this.load.image('harry', _.default.harry);
+    this.load.image('princess', _.default.princess);
+    this.load.image('thunder', _.default.thunder);
+    this.load.image('white_soldier', _.default.white_soldier);
+    this.load.image('harry_bg', _.default.harry_bg);
+    this.load.image('princess_bg', _.default.princess_bg);
+    this.load.image('thunder_bg', _.default.thunder_bg);
+    this.load.image('white_soldier_bg', _.default.white_soldier_bg);
+    this.load.image('branch', _.default.branch);
+    this.load.image('lotion', _.default.lotion);
+    this.load.image('hammer', _.default.hammer);
+    this.load.image('light_sword', _.default.light_sword);
+    this.load.image('bn6', _.default.bn6);
+    this.load.image('bn7', _.default.bn7);
+    this.load.image('ticket1', _.default.ticket1);
+    this.load.image('ticket2', _.default.ticket2);
+    this.load.image('ticket3', _.default.ticket3);
+    this.load.image('ticket4', _.default.ticket4);
+    this.load.image('ticket5', _.default.ticket5);
+    this.load.image('close_btn', _.default.close_btn);
+    this.load.image('paper', _.default.paper); // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
 
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this);
@@ -116420,8 +116517,8 @@ function init() {
 
 function home() {
   var weapon = null,
-      // clouds = null,
-  cloudsFront = null,
+      clouds = null,
+      cloudsFront = null,
       weaponList = null;
 
   this.create = function () {
@@ -116429,27 +116526,31 @@ function home() {
 
     document.getElementsByTagName('body')[0].style.backgroundColor = '#333';
     if (IS_MOBILE) document.getElementsByTagName('body')[0].classList.add('liner-background');
-    this.stage.backgroundColor = '#8adbff'; // clouds = game.add.physicsGroup()
-    // for (let i = 0; i < 5; i+=1) {
-    //   let cloudType = ['cloud', 'cloud2']
-    //   let cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)])
-    //   cloud.anchor.set(0.5)
-    //   cloud.scale.set(0.2)
-    //   cloud.body.velocity.x = game.rnd.between(-10, -30)
-    // }
-    // let title = game.add.sprite(game.world.centerX, -100, 'title')
+    this.stage.backgroundColor = '#8adbff';
+    clouds = game.add.physicsGroup();
+
+    for (var i = 0; i < 5; i += 1) {
+      var cloudType = ['cloud', 'cloud2'];
+      var cloud = clouds.create(game.world.randomX, _cloudPosY(), cloudType[game.rnd.between(0, 1)]);
+      cloud.anchor.set(0.5);
+      cloud.scale.set(0.2);
+      cloud.body.velocity.x = game.rnd.between(-10, -30);
+    } // let title = game.add.sprite(game.world.centerX, -100, 'title')
+
 
     var title = game.add.sprite(game.world.centerX, 100, 'title');
     title.anchor.set(0.5);
     title.scale.set(0.3); // game.add.tween(title).to( { y: 100 }, 3000, Phaser.Easing.Bounce.Out, true, 1500)
-    // let island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island')
-    // island.anchor.set(0.5)
-    // island.scale.set(0.28)
-    // game.add.tween(island).to( { y: island.y - 15 }, 2000, Phaser.Easing.Linear.None, true, 0 ,-1 , true)
-    // let coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee')
-    // coffee.anchor.set(0.5)
-    // coffee.scale.set(0.4)
 
+    var island = game.add.sprite(game.world.centerX, game.world.centerY - 50, 'island');
+    island.anchor.set(0.5);
+    island.scale.set(0.28);
+    game.add.tween(island).to({
+      y: island.y - 15
+    }, 2000, Phaser.Easing.Linear.None, true, 0, -1, true);
+    var coffee = game.add.sprite(game.world.centerX - 20, 750, 'coffee');
+    coffee.anchor.set(0.5);
+    coffee.scale.set(0.4);
     var lightSword = game.add.button(game.world.centerX + 150, 170 + game.world.centerY, 'light_sword', function () {}, this, 2, 1, 0);
     lightSword.isPlayed = isPlayed.lightSword;
     lightSword.dude = 'white_soldier';
@@ -116510,15 +116611,21 @@ function home() {
       //     game.state.start('play', true, false, weapon.dude)
       //   })
       // }
-    }); // cloudsFront = game.add.physicsGroup()
-    // for (let i = 0; i < 3; i+=1) {
-    //   let cloudType = ['cloud', 'cloud2']
-    //   let cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), cloudType[game.rnd.between(0, 1)])
-    //   cloud.anchor.set(0.5)
-    //   cloud.scale.set(0.18)
-    //   // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
-    //   cloud.body.velocity.x = game.rnd.between(-10, -65)
-    // }
+    });
+    cloudsFront = game.add.physicsGroup();
+
+    for (var _i = 0; _i < 3; _i += 1) {
+      var _cloudType = ['cloud', 'cloud2'];
+
+      var _cloud = cloudsFront.create(game.world.randomX, _cloudFrontPosY(), _cloudType[game.rnd.between(0, 1)]);
+
+      _cloud.anchor.set(0.5);
+
+      _cloud.scale.set(0.18); // game.add.tween(cloud).to( { x: -100 }, game.rnd.between(10000, 12000), Phaser.Easing.Linear.None, true)
+
+
+      _cloud.body.velocity.x = game.rnd.between(-10, -65);
+    }
 
     var hintPopup = {
       name: 'ticket5',
@@ -116537,21 +116644,22 @@ function home() {
     }; // game.time.events.add(5000, ()=> { showPopup(hintPopup) })
 
     showPopup(hintPopup);
-  }; // this.update = function() {
-  //   clouds.forEach((cloud) => {
-  //     if(cloud.x < -100) {
-  //       cloud.x = game.world.width + 100
-  //       cloud.y = _cloudPosY()
-  //     }
-  //   }, this)
-  //   cloudsFront.forEach((cloud) => {
-  //     if(cloud.x < -100) {
-  //       cloud.x = game.world.width + 100
-  //       cloud.y = _cloudFrontPosY()
-  //     }
-  //   }, this)
-  // }
+  };
 
+  this.update = function () {
+    clouds.forEach(function (cloud) {
+      if (cloud.x < -100) {
+        cloud.x = game.world.width + 100;
+        cloud.y = _cloudPosY();
+      }
+    }, this);
+    cloudsFront.forEach(function (cloud) {
+      if (cloud.x < -100) {
+        cloud.x = game.world.width + 100;
+        cloud.y = _cloudFrontPosY();
+      }
+    }, this);
+  };
 
   this.render = function () {};
 
@@ -117018,7 +117126,7 @@ function filterText(text, num) {
     }
   });
 }
-},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/utils/simpleCookies.js":"src/js/utils/simpleCookies.js","/src/js/service/questions.js":"src/js/service/questions.js","/src/js/service/coin.js":"src/js/service/coin.js","/src/assets/icon.png":"src/assets/icon.png","/src/assets/icon_1111.png":"src/assets/icon_1111.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/utils/simpleCookies.js":"src/js/utils/simpleCookies.js","/src/js/service/questions.js":"src/js/service/questions.js","/src/js/service/coin.js":"src/js/service/coin.js","./src/assets/icon.png":"src/assets/icon.png","./src/assets/icon_1111.png":"src/assets/icon_1111.png","./src/assets/*.png":"src/assets/*.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -117046,7 +117154,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41678" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

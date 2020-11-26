@@ -116570,7 +116570,6 @@ function init() {
 
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this); // this.load.onLoadComplete.add(loadComplete, this);
-    // this.load.onLoadComplete.add(() => setTimeout(loadComplete, 500), this);
   };
 
   function loadStart() {
@@ -116584,35 +116583,52 @@ function init() {
   function fileComplete(progress, cacheKey, success, totalLoaded, totalFiles) {// text.setText("File Complete: " + progress + "% - " + totalLoaded + " out of " + totalFiles);
   }
 
-  function loadComplete() {
-    if (isDeadline) {
-      // text.setText("Load Complete");
-      game.state.start('home');
-      var randomList = ['今天已經玩過囉！明天再來吧', '掰掰！明天見', '眼睛該休息囉！明天再來吧', '今日任務已達上限'];
-      API_EXCUTE && // false &&
-      (0, _coin.checkLogin)().then(function (res) {
-        profile.userNick = res.userNick;
-        profile.rid = (0, _simpleCookies.getCookie)('bid_rid');
-        var list = [(0, _coin.checkPermission)(profile.userNick, 'GAME_1'), (0, _coin.checkPermission)(profile.userNick, 'GAME_2'), (0, _coin.checkPermission)(profile.userNick, 'GAME_3'), (0, _coin.checkPermission)(profile.userNick, 'GAME_4')];
-        Promise.all(list).then(function (res) {
-          isPlayed = {
-            hammer: !res[0].available,
-            lightSword: !res[1].available,
-            lotion: !res[2].available,
-            branch: !res[3].available
-          };
-          game.state.start('home');
-          [!res[0].available, !res[1].available, !res[2].available, !res[3].available].every(function (isPlayed) {
-            return isPlayed;
-          }) && alert(randomList[game.rnd.between(0, 3)]);
-        }).catch(function () {
-          return alert(randomList[game.rnd.between(0, 3)]);
-        });
-      }).catch(function () {});
-    } else {
-      setTimeout(loadComplete, 500);
-    }
-  }
+  function loadComplete() {} //   function loadComplete() {
+  //     if (isDeadline) {
+  //       // text.setText("Load Complete");
+  //       game.state.start('home')
+  //       let randomList = [
+  //         '今天已經玩過囉！明天再來吧',
+  //         '掰掰！明天見',
+  //         '眼睛該休息囉！明天再來吧',
+  //         '今日任務已達上限'
+  //       ]
+  //       API_EXCUTE &&
+  //       // false &&
+  //       checkLogin()
+  //         .then(res => {
+  //           profile.userNick = res.userNick
+  //           profile.rid = getCookie('bid_rid')
+  //           const list = [
+  //             checkPermission(profile.userNick, 'GAME_1'),
+  //             checkPermission(profile.userNick, 'GAME_2'),
+  //             checkPermission(profile.userNick, 'GAME_3'),
+  //             checkPermission(profile.userNick, 'GAME_4')
+  //           ]
+  //           Promise.all(list)
+  //             .then(res => {
+  //               isPlayed = {
+  //                 hammer: !res[0].available,
+  //                 lightSword: !res[1].available,
+  //                 lotion: !res[2].available,
+  //                 branch: !res[3].available
+  //               }
+  //               game.state.start('home')
+  //               ;[
+  //                 !res[0].available,
+  //                 !res[1].available,
+  //                 !res[2].available,
+  //                 !res[3].available
+  //               ].every(isPlayed => isPlayed) && alert(randomList[game.rnd.between(0, 3)])
+  //             })
+  //             .catch(() => alert(randomList[game.rnd.between(0, 3)]))
+  //         })
+  //         .catch(() => {})
+  //     } else {
+  //       setTimeout(loadComplete, 500)
+  //     }
+  //   }
+
 }
 
 function home() {
@@ -117246,7 +117262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53508" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42517" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

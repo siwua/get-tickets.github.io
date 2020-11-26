@@ -305,8 +305,6 @@ function init() {
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this);
     // this.load.onLoadComplete.add(loadComplete, this);
-    // this.load.onLoadComplete.add(() => setTimeout(loadComplete, 500), this);
-
   }
 
   function loadStart() {
@@ -318,61 +316,61 @@ function init() {
   function fileComplete(progress, cacheKey, success, totalLoaded, totalFiles) {
     // text.setText("File Complete: " + progress + "% - " + totalLoaded + " out of " + totalFiles);
   }
+  function loadComplete() {}
+//   function loadComplete() {
+//     if (isDeadline) {
+//       // text.setText("Load Complete");
 
-  function loadComplete() {
-    if (isDeadline) {
-      // text.setText("Load Complete");
+//       game.state.start('home')
 
-      game.state.start('home')
+//       let randomList = [
+//         '今天已經玩過囉！明天再來吧',
+//         '掰掰！明天見',
+//         '眼睛該休息囉！明天再來吧',
+//         '今日任務已達上限'
+//       ]
 
-      let randomList = [
-        '今天已經玩過囉！明天再來吧',
-        '掰掰！明天見',
-        '眼睛該休息囉！明天再來吧',
-        '今日任務已達上限'
-      ]
+//       API_EXCUTE &&
+//       // false &&
+//       checkLogin()
+//         .then(res => {
+//           profile.userNick = res.userNick
+//           profile.rid = getCookie('bid_rid')
 
-      API_EXCUTE &&
-      // false &&
-      checkLogin()
-        .then(res => {
-          profile.userNick = res.userNick
-          profile.rid = getCookie('bid_rid')
+//           const list = [
+//             checkPermission(profile.userNick, 'GAME_1'),
+//             checkPermission(profile.userNick, 'GAME_2'),
+//             checkPermission(profile.userNick, 'GAME_3'),
+//             checkPermission(profile.userNick, 'GAME_4')
+//           ]
 
-          const list = [
-            checkPermission(profile.userNick, 'GAME_1'),
-            checkPermission(profile.userNick, 'GAME_2'),
-            checkPermission(profile.userNick, 'GAME_3'),
-            checkPermission(profile.userNick, 'GAME_4')
-          ]
+//           Promise.all(list)
+//             .then(res => {
+//               isPlayed = {
+//                 hammer: !res[0].available,
+//                 lightSword: !res[1].available,
+//                 lotion: !res[2].available,
+//                 branch: !res[3].available
+//               }
 
-          Promise.all(list)
-            .then(res => {
-              isPlayed = {
-                hammer: !res[0].available,
-                lightSword: !res[1].available,
-                lotion: !res[2].available,
-                branch: !res[3].available
-              }
+//               game.state.start('home')
 
-              game.state.start('home')
+//               ;[
+//                 !res[0].available,
+//                 !res[1].available,
+//                 !res[2].available,
+//                 !res[3].available
+//               ].every(isPlayed => isPlayed) && alert(randomList[game.rnd.between(0, 3)])
 
-              ;[
-                !res[0].available,
-                !res[1].available,
-                !res[2].available,
-                !res[3].available
-              ].every(isPlayed => isPlayed) && alert(randomList[game.rnd.between(0, 3)])
+//             })
+//             .catch(() => alert(randomList[game.rnd.between(0, 3)]))
+//         })
+//         .catch(() => {})
 
-            })
-            .catch(() => alert(randomList[game.rnd.between(0, 3)]))
-        })
-        .catch(() => {})
-
-    } else {
-      setTimeout(loadComplete, 500)
-    }
-  }
+//     } else {
+//       setTimeout(loadComplete, 500)
+//     }
+//   }
 }
 
 function home() {

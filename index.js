@@ -11,8 +11,11 @@ import {saveAward, checkPermission, checkLogin} from '/src/js/service/coin.js'
 import iconUrl from '/src/assets/icon.png'
 import icon1111Url from '/src/assets/icon_1111.png'
 
-// import Gray from '/src/js/filters/gray.js'
+// import hammer from '/src/assets/hammer.png'
 
+// import Gray from '/src/js/filters/gray.js'
+// console.log(iconUrl)
+// console.log(hammer)
 const
   DEFAULT_FONT = 'Microsoft JhengHei',
   MAX_WIDTH = 640,
@@ -57,7 +60,8 @@ function checkMobile() {
 }
 
 function checkOffline() {
-  return sharonGetDate() > 20181111
+  // return sharonGetDate() > 20181111
+  return false
 }
 
 function checkDoubleEleventDay() {
@@ -204,10 +208,11 @@ function slash() {
     this.scale.maxWidth = MAX_WIDTH
     this.scale.maxHeight = MAX_HEIGHT
 
-    this.load.image('loading_fiture', 'assets/loading_fiture.png')
-    this.load.image('loading_icon', 'assets/loading_icon.png')
-    this.load.image('cloud', 'assets/cloud.png');
-    this.load.image('cloud2', 'assets/cloud2.png');
+    this.load.image('loading_fiture', '/src/assets/loading_fiture.png')
+    this.load.image('loading_icon', '/src/assets/loading_icon.png')
+    this.load.image('cloud', '/src/assets/cloud.png');
+    this.load.image('cloud2', '/src/assets/cloud2.png');
+    console.log(this.load.image)
   }
   this.create = function() {
     this.stage.backgroundColor = '#8adbff'
@@ -275,31 +280,31 @@ function init() {
     // this.input.touch.preventDefault = false;
 
     // this.stage.backgroundColor = '#182d3b';
-    this.load.image('button', 'assets/game_btn.png');
-    this.load.image('title', 'assets/title.png');
-    this.load.image('island', 'assets/island.png');
-    this.load.image('coffee', 'assets/coffee.png');
-    this.load.image('harry', 'assets/harry.png');
-    this.load.image('princess', 'assets/princess.png');
-    this.load.image('thunder', 'assets/thunder.png');
-    this.load.image('white_soldier', 'assets/white_soldier.png');
-    this.load.image('harry_bg', 'assets/harry_bg.png');
-    this.load.image('princess_bg', 'assets/princess_bg.png');
-    this.load.image('thunder_bg', 'assets/thunder_bg.png');
-    this.load.image('white_soldier_bg', 'assets/white_soldier_bg.png');
-    this.load.image('branch', 'assets/branch.png');
-    this.load.image('lotion', 'assets/lotion.png');
-    this.load.image('hammer', 'assets/hammer.png');
-    this.load.image('light_sword', 'assets/light_sword.png');
-    this.load.image('bn6', 'assets/bn6.png');
-    this.load.image('bn7', 'assets/bn7.png');
-    this.load.image('ticket1', 'assets/ticket1.png');
-    this.load.image('ticket2', 'assets/ticket2.png');
-    this.load.image('ticket3', 'assets/ticket3.png');
-    this.load.image('ticket4', 'assets/ticket4.png');
-    this.load.image('ticket5', 'assets/ticket5.png');
-    this.load.image('close_btn', 'assets/close_btn.png');
-    this.load.image('paper', 'assets/paper.png');
+    this.load.image('button', '/src/assets/game_btn.png');
+    this.load.image('title', '/src/assets/title.png');
+    this.load.image('island', '/src/assets/island.png');
+    this.load.image('coffee', '/src/assets/coffee.png');
+    this.load.image('harry', '/src/assets/harry.png');
+    this.load.image('princess', '/src/assets/princess.png');
+    this.load.image('thunder', '/src/assets/thunder.png');
+    this.load.image('white_soldier', '/src/assets/white_soldier.png');
+    this.load.image('harry_bg', '/src/assets/harry_bg.png');
+    this.load.image('princess_bg', '/src/assets/princess_bg.png');
+    this.load.image('thunder_bg', '/src/assets/thunder_bg.png');
+    this.load.image('white_soldier_bg', '/src/assets/white_soldier_bg.png');
+    this.load.image('branch', '/src/assets/branch.png');
+    this.load.image('lotion', '/src/assets/lotion.png');
+    this.load.image('hammer', '/src/assets/hammer.png');
+    this.load.image('light_sword', '/src/assets/light_sword.png');
+    this.load.image('bn6', '/src/assets/bn6.png');
+    this.load.image('bn7', '/src/assets/bn7.png');
+    this.load.image('ticket1', '/src/assets/ticket1.png');
+    this.load.image('ticket2', '/src/assets/ticket2.png');
+    this.load.image('ticket3', '/src/assets/ticket3.png');
+    this.load.image('ticket4', '/src/assets/ticket4.png');
+    this.load.image('ticket5', '/src/assets/ticket5.png');
+    this.load.image('close_btn', '/src/assets/close_btn.png');
+    this.load.image('paper', '/src/assets/paper.png');
 
     // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
     this.load.onLoadStart.add(loadStart, this);

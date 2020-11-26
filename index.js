@@ -309,7 +309,8 @@ function init() {
     // text = game.add.text(32, 32, 'Click to start load', { fill: '#ffffff' });
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this);
-    this.load.onLoadComplete.add(loadComplete, this);
+    // this.load.onLoadComplete.add(loadComplete, this);
+    this.load.onLoadComplete.add(() => setTimeout(loadComplete, 500), this);
 
   }
 
@@ -352,7 +353,6 @@ function init() {
 
           Promise.all(list)
             .then(res => {
-
               isPlayed = {
                 hammer: !res[0].available,
                 lightSword: !res[1].available,

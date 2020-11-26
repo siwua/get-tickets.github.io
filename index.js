@@ -305,7 +305,7 @@ function init() {
     this.load.onLoadStart.add(loadStart, this);
     this.load.onFileComplete.add(fileComplete, this);
     // this.load.onLoadComplete.add(loadComplete, this);
-    this.load.onLoadComplete.add(() => setTimeout(loadComplete, 500), this);
+    // this.load.onLoadComplete.add(() => setTimeout(loadComplete, 500), this);
 
   }
 

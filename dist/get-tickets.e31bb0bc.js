@@ -116233,32 +116233,29 @@ function checkMobile() {
   })(navigator.userAgent || navigator.vendor || window.opera);
 
   return check;
-}
+} // function checkOffline() {
+//   return sharonGetDate() > 20181111
+// }
+// function checkDoubleEleventDay() {
+//   var nowDate = sharonGetDate();
+//   return 20181111 <= nowDate && nowDate < 20181112
+// }
+// function sharonGetDate() {
+//   let today = new Date()
+//   let month = today.getMonth() + 1
+//   let day = today.getDate()
+//   return Number(today.getFullYear() + ((month > 9 ? '' : '0') + month) + ((day > 9 ? '' : '0') + day))
+// }
 
-function checkOffline() {
-  // return sharonGetDate() > 20181111
-  return false;
-}
-
-function checkDoubleEleventDay() {
-  var nowDate = sharonGetDate();
-  return 20181111 <= nowDate && nowDate < 20181112;
-}
-
-function sharonGetDate() {
-  var today = new Date();
-  var month = today.getMonth() + 1;
-  var day = today.getDate();
-  return Number(today.getFullYear() + ((month > 9 ? '' : '0') + month) + ((day > 9 ? '' : '0') + day));
-}
 
 window.onload = function () {
   var sideM = document.querySelector('.side-mobile'),
       sidePC = document.querySelector('.side-pc'),
       main = document.querySelector('.main'),
-      icons = document.querySelectorAll('.icon img');
+      icons = document.querySelectorAll('.icon img'); // Array.from(icons).forEach(icon => icon.src = checkDoubleEleventDay() ? icon1111Url : iconUrl)
+
   Array.from(icons).forEach(function (icon) {
-    return icon.src = checkDoubleEleventDay() ? _icon_.default : _icon.default;
+    return icon.src = _icon.default;
   });
 
   if (!IS_MOBILE) {
@@ -117071,13 +117068,13 @@ game.state.add('slash', slash);
 game.state.add('init', init);
 game.state.add('home', home);
 game.state.add('play', play);
-game.state.add('over', over);
+game.state.add('over', over); // if(checkOffline()) {
+//   alert('活動已結束，感謝您的參與！\n請持續關注露天活動，好康不錯過～')
+// } else {
+//   game.state.start('slash')
+// }
 
-if (checkOffline()) {
-  alert('活動已結束，感謝您的參與！\n請持續關注露天活動，好康不錯過～');
-} else {
-  game.state.start('slash');
-}
+game.state.start('slash');
 
 if (document.querySelectorAll('canvas').length > 0) {
   document.querySelectorAll('canvas')[0].remove();
@@ -117154,7 +117151,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41678" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56461" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

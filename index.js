@@ -56,22 +56,21 @@ function checkMobile() {
   return check;
 }
 
-function checkOffline() {
-  // return sharonGetDate() > 20181111
-  return false
-}
+// function checkOffline() {
+//   return sharonGetDate() > 20181111
+// }
 
-function checkDoubleEleventDay() {
-  var nowDate = sharonGetDate();
-  return 20181111 <= nowDate && nowDate < 20181112
-}
+// function checkDoubleEleventDay() {
+//   var nowDate = sharonGetDate();
+//   return 20181111 <= nowDate && nowDate < 20181112
+// }
 
-function sharonGetDate() {
-  let today = new Date()
-  let month = today.getMonth() + 1
-  let day = today.getDate()
-  return Number(today.getFullYear() + ((month > 9 ? '' : '0') + month) + ((day > 9 ? '' : '0') + day))
-}
+// function sharonGetDate() {
+//   let today = new Date()
+//   let month = today.getMonth() + 1
+//   let day = today.getDate()
+//   return Number(today.getFullYear() + ((month > 9 ? '' : '0') + month) + ((day > 9 ? '' : '0') + day))
+// }
 
 window.onload = function() {
   const
@@ -80,7 +79,8 @@ window.onload = function() {
     main = document.querySelector('.main'),
     icons = document.querySelectorAll('.icon img')
 
-  Array.from(icons).forEach(icon => icon.src = checkDoubleEleventDay() ? icon1111Url : iconUrl)
+  // Array.from(icons).forEach(icon => icon.src = checkDoubleEleventDay() ? icon1111Url : iconUrl)
+  Array.from(icons).forEach(icon => icon.src = iconUrl)
 
   if(!IS_MOBILE) {
     sidePC.style.display = 'block'
@@ -864,11 +864,13 @@ game.state.add('home', home)
 game.state.add('play', play)
 game.state.add('over', over)
 
-if(checkOffline()) {
-  alert('活動已結束，感謝您的參與！\n請持續關注露天活動，好康不錯過～')
-} else {
-  game.state.start('slash')
-}
+// if(checkOffline()) {
+//   alert('活動已結束，感謝您的參與！\n請持續關注露天活動，好康不錯過～')
+// } else {
+//   game.state.start('slash')
+// }
+game.state.start('slash')
+
 
 if(document.querySelectorAll('canvas').length > 0) {
   document.querySelectorAll('canvas')[0].remove()

@@ -72,49 +72,49 @@ function checkMobile() {
 
 window.onload = function() {
   const
-    sideM = document.querySelector('.side-mobile'),
-    sidePC = document.querySelector('.side-pc'),
-    main = document.querySelector('.main'),
+    // sideM = document.querySelector('.side-mobile'),
+    // sidePC = document.querySelector('.side-pc'),
+    // main = document.querySelector('.main'),
     icons = document.querySelectorAll('.icon img')
 
   Array.from(icons).forEach(icon => icon.src = iconUrl)
 
-  if(!IS_MOBILE) {
-    sidePC.style.display = 'block'
-  } else {
-    sideM.style.display = 'block'
+  // if(!IS_MOBILE) {
+  //   sidePC.style.display = 'block'
+  // } else {
+  //   sideM.style.display = 'block'
 
-    // window.ontouchmove = function() {return false}
-    // window.onscroll = function() {return false}
-    // $(window).bind(
-    //   'touchmove',
-    //    function(e) {
-    //     e.preventDefault();
-    //   }
-    // );
+  //   // window.ontouchmove = function() {return false}
+  //   // window.onscroll = function() {return false}
+  //   // $(window).bind(
+  //   //   'touchmove',
+  //   //    function(e) {
+  //   //     e.preventDefault();
+  //   //   }
+  //   // );
 
-    // let vh = window.innerHeight * 0.01;
-    // document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   // let vh = window.innerHeight * 0.01;
+  //   // document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    // document.body.position = 'fixed'
-    // document.documentElement.position = 'fixed'
+  //   // document.body.position = 'fixed'
+  //   // document.documentElement.position = 'fixed'
 
-    main.style.height = `${window.innerHeight}px`
+  //   main.style.height = `${window.innerHeight}px`
 
-    // document.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // }
-    // document.touchstart = function (e) {
-    //   e.preventDefault();
-    // }
+  //   // document.ontouchmove = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  //   // document.touchstart = function (e) {
+  //   //   e.preventDefault();
+  //   // }
 
-    // main.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // }
-    // main.touchstart = function (e) {
-    //   e.preventDefault();
-    // }
-  }
+  //   // main.ontouchmove = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  //   // main.touchstart = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  // }
 }
 // const Presets = {
 //   'width': window.innerWidth > 640 ? 640 : window.innerWidth,

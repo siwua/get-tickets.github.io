@@ -116246,43 +116246,42 @@ function checkMobile() {
 
 
 window.onload = function () {
-  var sideM = document.querySelector('.side-mobile'),
-      sidePC = document.querySelector('.side-pc'),
-      main = document.querySelector('.main'),
-      icons = document.querySelectorAll('.icon img');
+  var // sideM = document.querySelector('.side-mobile'),
+  // sidePC = document.querySelector('.side-pc'),
+  // main = document.querySelector('.main'),
+  icons = document.querySelectorAll('.icon img');
   Array.from(icons).forEach(function (icon) {
     return icon.src = _icon.default;
-  });
-
-  if (!IS_MOBILE) {
-    sidePC.style.display = 'block';
-  } else {
-    sideM.style.display = 'block'; // window.ontouchmove = function() {return false}
-    // window.onscroll = function() {return false}
-    // $(window).bind(
-    //   'touchmove',
-    //    function(e) {
-    //     e.preventDefault();
-    //   }
-    // );
-    // let vh = window.innerHeight * 0.01;
-    // document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // document.body.position = 'fixed'
-    // document.documentElement.position = 'fixed'
-
-    main.style.height = "".concat(window.innerHeight, "px"); // document.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // }
-    // document.touchstart = function (e) {
-    //   e.preventDefault();
-    // }
-    // main.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // }
-    // main.touchstart = function (e) {
-    //   e.preventDefault();
-    // }
-  }
+  }); // if(!IS_MOBILE) {
+  //   sidePC.style.display = 'block'
+  // } else {
+  //   sideM.style.display = 'block'
+  //   // window.ontouchmove = function() {return false}
+  //   // window.onscroll = function() {return false}
+  //   // $(window).bind(
+  //   //   'touchmove',
+  //   //    function(e) {
+  //   //     e.preventDefault();
+  //   //   }
+  //   // );
+  //   // let vh = window.innerHeight * 0.01;
+  //   // document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   // document.body.position = 'fixed'
+  //   // document.documentElement.position = 'fixed'
+  //   main.style.height = `${window.innerHeight}px`
+  //   // document.ontouchmove = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  //   // document.touchstart = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  //   // main.ontouchmove = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  //   // main.touchstart = function (e) {
+  //   //   e.preventDefault();
+  //   // }
+  // }
 }; // const Presets = {
 //   'width': window.innerWidth > 640 ? 640 : window.innerWidth,
 //   'height': window.innerHeight > 820 ? 820 : window.innerHeight
@@ -117149,7 +117148,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34891" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55252" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

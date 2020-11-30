@@ -9,9 +9,7 @@ import {setCookie, getCookie} from '/src/js/utils/simpleCookies.js'
 import questions from '/src/js/service/questions.js'
 import {saveAward, checkPermission, checkLogin} from '/src/js/service/coin.js'
 import iconUrl from './src/assets/icon.png'
-import icon1111Url from './src/assets/icon_1111.png'
 import images from './src/assets/*.png'
-// import Gray from '/src/js/filters/gray.js'
 
 const
   DEFAULT_FONT = 'Microsoft JhengHei',
@@ -79,7 +77,6 @@ window.onload = function() {
     main = document.querySelector('.main'),
     icons = document.querySelectorAll('.icon img')
 
-  // Array.from(icons).forEach(icon => icon.src = checkDoubleEleventDay() ? icon1111Url : iconUrl)
   Array.from(icons).forEach(icon => icon.src = iconUrl)
 
   if(!IS_MOBILE) {
@@ -500,9 +497,10 @@ function home() {
       label: {
         x: game.world.centerX,
         y: game.world.centerY - 100,
-        text: '歡迎來到『露天覓寶樂園』\n只要通過挑戰，\n就可以獲得彩票。\n請選擇一個裝備開始闖關',
+        // text: '歡迎來到『露天覓寶樂園』\n只要通過挑戰，\n就可以獲得彩票。\n請選擇一個裝備開始闖關',
+        text: '歡迎來到\n『露天機智大問答』\n只要通過挑戰，\n就可以得到進入關卡的機會哦。\n',
         style: { font: 'bold 20pt ' + DEFAULT_FONT },
-        config: { lineSpacing: 10 }
+        config: { lineSpacing: 10, fontSize: 22 }
       }
     }
     // game.time.events.add(5000, ()=> { showPopup(hintPopup) })

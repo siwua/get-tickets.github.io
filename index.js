@@ -307,7 +307,7 @@ function init() {
 
   function loadStart() {
     // text.setText("Loading ...");
-    setTimeout(() => {isDeadline = true}, 2000);
+    // setTimeout(() => {isDeadline = true}, 2000);
   }
 
   //	This callback is sent the following parameters:

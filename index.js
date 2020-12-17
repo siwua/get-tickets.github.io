@@ -5,9 +5,8 @@ window.Phaser = require('phaser-ce/build/custom/phaser-split')
 import 'promise-polyfill/src/polyfill'
 import 'whatwg-fetch'
 import '/src/js/utils/jquery-1.7.1.min.js'
-import {setCookie, getCookie} from '/src/js/utils/simpleCookies.js'
+// import {setCookie, getCookie} from '/src/js/utils/simpleCookies.js'
 import questions from '/src/js/service/questions.js'
-import {saveAward, checkPermission, checkLogin} from '/src/js/service/coin.js'
 import iconUrl from './src/assets/icon.png'
 import images from './src/assets/*.png'
 
@@ -623,17 +622,17 @@ function play() {
               watchData.isAnimateComplete = true
             })
 
-            API_EXCUTE &&
-            saveAward({rid: getCookie('bid_rid'), type: gameMap[dude]})
-              .then(res => response = res)
-              .catch(error => response = error)
-              .then(() => watchData.isAjaxComplete = true)
+            // API_EXCUTE &&
+            // saveAward({rid: getCookie('bid_rid'), type: gameMap[dude]})
+            //   .then(res => response = res)
+            //   .catch(error => response = error)
+            //   .then(() => watchData.isAjaxComplete = true)
 
             watchTimer = setInterval(() => {
-              if(watchData.isAnimateComplete && watchData.isAjaxComplete) {
+              if(watchData.isAnimateComplete) {
                 clearInterval(watchTimer)
                 watchTimer = null
-                watchData.isAjaxComplete = watchData.isAnimateComplete = false
+                watchData.isAnimateComplete = false
                 game.state.start('over', false, false, {dude, response})
               }
             }, 500)
@@ -716,86 +715,22 @@ function over() {
     overDude = dude
     res = response
 
-    if(res.status === 'success') {
-      coinAmount = res.data.amount
-    }
-
+  //   if(res.status === 'success') {
+  //     coinAmount = res.data.amount
+  //   }
     overPopupList = [
-      {
-        name: 'ticket1',
-        action: {
-          x: game.world.centerX,
-          y: game.world.centerY + 200,
-          callback() { window.location = COIN_PAGE_URL }
-        },
-        label: {
-          x: game.world.centerX + 75,
-          y: game.world.centerY - 95,
-          text: `闖關成功！\n獲得彩票${coinAmount}張！`,
-          style: { font: 'bold 20pt ' + DEFAULT_FONT }
-        },
-        closeCallback() {
-          setTimeout(() => {
-            game.input.onDown.addOnce(function() {
-              game.state.start('home')
-            }, this)
-          })
-        }
-      },
-      {
-        name: 'ticket2',
-        action: {
-          x: game.world.centerX,
-          y: game.world.centerY + 200,
-          callback() { window.location = COIN_PAGE_URL }
-        },
-        label: {
-          x: game.world.centerX,
-          y: game.world.centerY + 130,
-          text: `你真是聰明絕頂～\n${coinAmount}張彩票送你！！`,
-          style: { font: 'bold 20pt ' + DEFAULT_FONT }
-        },
-        closeCallback() {
-          setTimeout(() => {
-            game.input.onDown.addOnce(function() {
-              game.state.start('home')
-            }, this)
-          })
-        }
-      },
-      {
-        name: 'ticket3',
-        action: {
-          x: game.world.centerX,
-          y: game.world.centerY + 200,
-          callback() { window.location = COIN_PAGE_URL }
-        },
-        label: {
-          x: game.world.centerX,
-          y: game.world.centerY + 110,
-          text: `阿不就好棒棒！\n彩票${coinAmount}張給你`,
-          style: { font: 'bold 20pt ' + DEFAULT_FONT }
-        },
-        closeCallback() {
-          setTimeout(() => {
-            game.input.onDown.addOnce(function() {
-              game.state.start('home')
-            }, this)
-          })
-        }
-      },
       {
         name: 'ticket4',
         action: {
           x: game.world.centerX,
-          y: game.world.centerY,
+          y: game.world.centerY + 200,
           callback() { window.location = COIN_PAGE_URL }
         },
         label: {
-          x: game.world.centerX,
-          y: game.world.centerY - 70,
-          text: `${coinAmount}張彩票進帳囉`,
-          style: { font: 'bold 24pt ' + DEFAULT_FONT }
+          x: game.world.centerX + 20,
+          y: game.world.centerY - 65,
+          text: `闖關成功！\n不愧是露天的一份子！`,
+          style: { font: 'bold 20pt ' + DEFAULT_FONT }
         },
         closeCallback() {
           setTimeout(() => {
@@ -804,8 +739,94 @@ function over() {
             }, this)
           })
         }
-      },
+      }
     ]
+  //   overPopupList = [
+  //     {
+  //       name: 'ticket1',
+  //       action: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY + 200,
+  //         callback() { window.location = COIN_PAGE_URL }
+  //       },
+  //       label: {
+  //         x: game.world.centerX + 75,
+  //         y: game.world.centerY - 95,
+  //         text: `闖關成功！\n獲得彩票${coinAmount}張！`,
+  //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+  //       },
+  //       closeCallback() {
+  //         setTimeout(() => {
+  //           game.input.onDown.addOnce(function() {
+  //             game.state.start('home')
+  //           }, this)
+  //         })
+  //       }
+  //     },
+  //     {
+  //       name: 'ticket2',
+  //       action: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY + 200,
+  //         callback() { window.location = COIN_PAGE_URL }
+  //       },
+  //       label: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY + 130,
+  //         text: `你真是聰明絕頂～\n${coinAmount}張彩票送你！！`,
+  //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+  //       },
+  //       closeCallback() {
+  //         setTimeout(() => {
+  //           game.input.onDown.addOnce(function() {
+  //             game.state.start('home')
+  //           }, this)
+  //         })
+  //       }
+  //     },
+  //     {
+  //       name: 'ticket3',
+  //       action: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY + 200,
+  //         callback() { window.location = COIN_PAGE_URL }
+  //       },
+  //       label: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY + 110,
+  //         text: `阿不就好棒棒！\n彩票${coinAmount}張給你`,
+  //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+  //       },
+  //       closeCallback() {
+  //         setTimeout(() => {
+  //           game.input.onDown.addOnce(function() {
+  //             game.state.start('home')
+  //           }, this)
+  //         })
+  //       }
+  //     },
+  //     {
+  //       name: 'ticket4',
+  //       action: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY,
+  //         callback() { window.location = COIN_PAGE_URL }
+  //       },
+  //       label: {
+  //         x: game.world.centerX,
+  //         y: game.world.centerY - 70,
+  //         text: `${coinAmount}張彩票進帳囉`,
+  //         style: { font: 'bold 24pt ' + DEFAULT_FONT }
+  //       },
+  //       closeCallback() {
+  //         setTimeout(() => {
+  //           game.input.onDown.addOnce(function() {
+  //             game.state.start('home')
+  //           }, this)
+  //         })
+  //       }
+  //     },
+  //   ]
   }
 
   this.create = function() {
@@ -813,16 +834,23 @@ function over() {
 
     game.add.text(game.world.centerX, game.world.centerY - 200, '點擊返回遊戲首頁', { fill: '#ffffff',font: 'bold 26pt ' + DEFAULT_FONT,}).anchor.set(0.5)
 
-    if(res.status === 'success') {
-      showPopup(overPopupList[game.rnd.between(0, overPopupList.length -1)])
-    } else if ((res.status === 'fail')){
-      alert(_errorCenter(res.data.code))
+
+    setTimeout(() => {
       game.input.onDown.addOnce(function() {
         game.state.start('home')
       }, this)
-    } else {
-      console.log('Api error')
-    }
+    })
+    showPopup(overPopupList[game.rnd.between(0, overPopupList.length -1)])
+    // if(res.status === 'success') {
+    //   showPopup(overPopupList[game.rnd.between(0, overPopupList.length -1)])
+    // } else if ((res.status === 'fail')){
+    //   alert(_errorCenter(res.data.code))
+    //   game.input.onDown.addOnce(function() {
+    //     game.state.start('home')
+    //   }, this)
+    // } else {
+    //   console.log('Api error')
+    // }
 
     isPlayed[dudeMap[overDude].weapon] = true
   }
@@ -895,11 +923,11 @@ function showPopup(current) {
   closeBtn.anchor.set(0.5)
   closeBtn.input.priorityID = 1
 
-  if(current.action) {
-    actionBtn = game.add.button(current.action.x, current.action.y, 'bn7', current.action.callback, this, 2, 1, 0)
-    actionBtn.anchor.set(0.5)
-    actionBtn.input.priorityID = 1
-  }
+  // if(current.action) {
+  //   actionBtn = game.add.button(current.action.x, current.action.y, 'bn7', current.action.callback, this, 2, 1, 0)
+  //   actionBtn.anchor.set(0.5)
+  //   actionBtn.input.priorityID = 1
+  // }
 
   text = game.add.text(current.label.x, current.label.y, current.label.text, Object.assign({ fill: '#ffffff' }, current.label.style))
   if(current.label.config) Object.assign(text, current.label.config)

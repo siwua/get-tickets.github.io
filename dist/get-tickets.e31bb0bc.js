@@ -115686,33 +115686,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return f;
   });
 })(window);
-},{}],"src/js/utils/simpleCookies.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.setCookie = setCookie;
-exports.getCookie = getCookie;
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=.ruten.com.tw;";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i].trim();
-    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-  }
-
-  return "";
-}
 },{}],"src/js/service/questions.js":[function(require,module,exports) {
 "use strict";
 
@@ -115939,129 +115912,6 @@ var _default = {
   branch: branch
 };
 exports.default = _default;
-},{}],"src/js/service/coin.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.checkLogin = exports.checkPermission = exports.saveAward = void 0;
-var RApi = {
-  dev: 'https://b3589481400.rapi.dev5',
-  stage: 'https://rapi.stage.ruten.com.tw',
-  formal: 'https://rapi.ruten.com.tw'
-};
-var MemberApi = {
-  dev: 'https://b3589481400.member.dev2.ruten.com.tw',
-  stage: 'https://member.stage.ruten.com.tw',
-  formal: 'https://member.ruten.com.tw'
-};
-
-var saveAward = function saveAward(_ref) {
-  var rid = _ref.rid,
-      type = _ref.type;
-  // return fetch(`https://b3589481400.rapi.dev5.ruten.com.tw/api/coin/v1/deposit/`, {
-  //   method: 'POST',
-  //   credentials: 'include',
-  //   body: JSON.stringify({
-  //     'ctrl_rowid': rid,
-  //     'ref_event': type,
-  //   }), // data can be `string` or {object}!
-  //   headers: new Headers({
-  //     'Content-Type': 'application/x-www-form-urlencoded'
-  //   })
-  // })
-  //   .then(_formatStatusCode)
-  //   .then(_formatJsend)
-  var defaultError = {
-    status: 'fail',
-    data: {
-      code: 999
-    }
-  };
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "".concat(RApi.formal, "/api/coin/v1/deposit"),
-      dataType: 'json',
-      type: 'POST',
-      data: {
-        'ctrl_rowid': rid,
-        'ref_event': type
-      },
-      xhrFields: {
-        withCredentials: true
-      },
-      success: function success(res) {
-        if (res && res.status === 'success') {
-          resolve(res);
-        } else {
-          reject(defaultError);
-        }
-      },
-      error: function error(res) {
-        try {
-          res = JSON.parse(res.responseText);
-
-          if (res.status === 'fail') {
-            reject(res);
-          } else {
-            reject(defaultError);
-          }
-        } catch (error) {
-          reject(defaultError);
-        }
-      }
-    });
-  });
-};
-
-exports.saveAward = saveAward;
-
-var checkPermission = function checkPermission(userNick, type) {
-  return fetch("".concat(RApi.formal, "/api/users/v1/").concat(userNick, "/coin/permission?ref_event=").concat(type), {
-    method: 'GET',
-    credentials: 'include'
-  }).then(_formatStatusCode).then(_formatJsend);
-};
-
-exports.checkPermission = checkPermission;
-
-var checkLogin = function checkLogin() {
-  return fetch("".concat(MemberApi.formal, "/user/ajax_header_slice.php"), {
-    method: 'POST',
-    credentials: 'include'
-  }).catch(function (error) {
-    alert('請先登入會員');
-    window.location = "".concat(MemberApi.formal, "/user/login.htm?refer=") + window.encodeURIComponent(window.location.href);
-  }).then(_formatStatusCode).then(function (res) {
-    if (!res) {
-      alert('請先登入會員');
-      window.location = "".concat(MemberApi.formal, "/user/login.htm?refer=") + window.encodeURIComponent(window.location.href);
-    }
-
-    if (res && res.user_nick) return {
-      userNick: res.user_nick
-    };
-  });
-};
-
-exports.checkLogin = checkLogin;
-
-function _formatStatusCode(response) {
-  if (response.status === 200 || response.status === 0) {
-    return Promise.resolve(response.json());
-  } else {
-    return Promise.reject(new Error(response.statusText));
-  }
-}
-
-function _formatJsend(response) {
-  if (response.status === 'success') {
-    return Promise.resolve(response.data);
-  } else {
-    return Promise.reject(response.data);
-  }
-}
 },{}],"src/assets/icon.png":[function(require,module,exports) {
 module.exports = "/icon.7a45658c.png";
 },{}],"src/assets/bn6.png":[function(require,module,exports) {
@@ -116170,11 +116020,7 @@ require("whatwg-fetch");
 
 require("/src/js/utils/jquery-1.7.1.min.js");
 
-var _simpleCookies = require("/src/js/utils/simpleCookies.js");
-
 var _questions = _interopRequireDefault(require("/src/js/service/questions.js"));
-
-var _coin = require("/src/js/service/coin.js");
 
 var _icon = _interopRequireDefault(require("./src/assets/icon.png"));
 
@@ -116799,22 +116645,17 @@ function play() {
             }, 200, Phaser.Easing.Linear.None, true, 0, 10, true);
             tweenDude.onComplete.add(function () {
               watchData.isAnimateComplete = true;
-            });
-            API_EXCUTE && (0, _coin.saveAward)({
-              rid: (0, _simpleCookies.getCookie)('bid_rid'),
-              type: gameMap[dude]
-            }).then(function (res) {
-              return response = res;
-            }).catch(function (error) {
-              return response = error;
-            }).then(function () {
-              return watchData.isAjaxComplete = true;
-            });
+            }); // API_EXCUTE &&
+            // saveAward({rid: getCookie('bid_rid'), type: gameMap[dude]})
+            //   .then(res => response = res)
+            //   .catch(error => response = error)
+            //   .then(() => watchData.isAjaxComplete = true)
+
             watchTimer = setInterval(function () {
-              if (watchData.isAnimateComplete && watchData.isAjaxComplete) {
+              if (watchData.isAnimateComplete) {
                 clearInterval(watchTimer);
                 watchTimer = null;
-                watchData.isAjaxComplete = watchData.isAnimateComplete = false;
+                watchData.isAnimateComplete = false;
                 game.state.start('over', false, false, {
                   dude: dude,
                   response: response
@@ -116911,14 +116752,12 @@ function over() {
     var dude = _ref.dude,
         response = _ref.response;
     overDude = dude;
-    res = response;
-
-    if (res.status === 'success') {
-      coinAmount = res.data.amount;
-    }
+    res = response; //   if(res.status === 'success') {
+    //     coinAmount = res.data.amount
+    //   }
 
     overPopupList = [{
-      name: 'ticket1',
+      name: 'ticket4',
       action: {
         x: game.world.centerX,
         y: game.world.centerY + 200,
@@ -116927,9 +116766,9 @@ function over() {
         }
       },
       label: {
-        x: game.world.centerX + 75,
-        y: game.world.centerY - 95,
-        text: "\u95D6\u95DC\u6210\u529F\uFF01\n\u7372\u5F97\u5F69\u7968".concat(coinAmount, "\u5F35\uFF01"),
+        x: game.world.centerX + 20,
+        y: game.world.centerY - 65,
+        text: "\u95D6\u95DC\u6210\u529F\uFF01\n\u4E0D\u6127\u662F\u9732\u5929\u7684\u4E00\u4EFD\u5B50\uFF01",
         style: {
           font: 'bold 20pt ' + DEFAULT_FONT
         }
@@ -116943,104 +116782,117 @@ function over() {
           }, _this4);
         });
       }
-    }, {
-      name: 'ticket2',
-      action: {
-        x: game.world.centerX,
-        y: game.world.centerY + 200,
-        callback: function callback() {
-          window.location = COIN_PAGE_URL;
-        }
-      },
-      label: {
-        x: game.world.centerX,
-        y: game.world.centerY + 130,
-        text: "\u4F60\u771F\u662F\u8070\u660E\u7D55\u9802\uFF5E\n".concat(coinAmount, "\u5F35\u5F69\u7968\u9001\u4F60\uFF01\uFF01"),
-        style: {
-          font: 'bold 20pt ' + DEFAULT_FONT
-        }
-      },
-      closeCallback: function closeCallback() {
-        var _this5 = this;
-
-        setTimeout(function () {
-          game.input.onDown.addOnce(function () {
-            game.state.start('home');
-          }, _this5);
-        });
-      }
-    }, {
-      name: 'ticket3',
-      action: {
-        x: game.world.centerX,
-        y: game.world.centerY + 200,
-        callback: function callback() {
-          window.location = COIN_PAGE_URL;
-        }
-      },
-      label: {
-        x: game.world.centerX,
-        y: game.world.centerY + 110,
-        text: "\u963F\u4E0D\u5C31\u597D\u68D2\u68D2\uFF01\n\u5F69\u7968".concat(coinAmount, "\u5F35\u7D66\u4F60"),
-        style: {
-          font: 'bold 20pt ' + DEFAULT_FONT
-        }
-      },
-      closeCallback: function closeCallback() {
-        var _this6 = this;
-
-        setTimeout(function () {
-          game.input.onDown.addOnce(function () {
-            game.state.start('home');
-          }, _this6);
-        });
-      }
-    }, {
-      name: 'ticket4',
-      action: {
-        x: game.world.centerX,
-        y: game.world.centerY,
-        callback: function callback() {
-          window.location = COIN_PAGE_URL;
-        }
-      },
-      label: {
-        x: game.world.centerX,
-        y: game.world.centerY - 70,
-        text: "".concat(coinAmount, "\u5F35\u5F69\u7968\u9032\u5E33\u56C9"),
-        style: {
-          font: 'bold 24pt ' + DEFAULT_FONT
-        }
-      },
-      closeCallback: function closeCallback() {
-        var _this7 = this;
-
-        setTimeout(function () {
-          game.input.onDown.addOnce(function () {
-            game.state.start('home');
-          }, _this7);
-        });
-      }
-    }];
+    }]; //   overPopupList = [
+    //     {
+    //       name: 'ticket1',
+    //       action: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY + 200,
+    //         callback() { window.location = COIN_PAGE_URL }
+    //       },
+    //       label: {
+    //         x: game.world.centerX + 75,
+    //         y: game.world.centerY - 95,
+    //         text: `闖關成功！\n獲得彩票${coinAmount}張！`,
+    //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+    //       },
+    //       closeCallback() {
+    //         setTimeout(() => {
+    //           game.input.onDown.addOnce(function() {
+    //             game.state.start('home')
+    //           }, this)
+    //         })
+    //       }
+    //     },
+    //     {
+    //       name: 'ticket2',
+    //       action: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY + 200,
+    //         callback() { window.location = COIN_PAGE_URL }
+    //       },
+    //       label: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY + 130,
+    //         text: `你真是聰明絕頂～\n${coinAmount}張彩票送你！！`,
+    //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+    //       },
+    //       closeCallback() {
+    //         setTimeout(() => {
+    //           game.input.onDown.addOnce(function() {
+    //             game.state.start('home')
+    //           }, this)
+    //         })
+    //       }
+    //     },
+    //     {
+    //       name: 'ticket3',
+    //       action: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY + 200,
+    //         callback() { window.location = COIN_PAGE_URL }
+    //       },
+    //       label: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY + 110,
+    //         text: `阿不就好棒棒！\n彩票${coinAmount}張給你`,
+    //         style: { font: 'bold 20pt ' + DEFAULT_FONT }
+    //       },
+    //       closeCallback() {
+    //         setTimeout(() => {
+    //           game.input.onDown.addOnce(function() {
+    //             game.state.start('home')
+    //           }, this)
+    //         })
+    //       }
+    //     },
+    //     {
+    //       name: 'ticket4',
+    //       action: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY,
+    //         callback() { window.location = COIN_PAGE_URL }
+    //       },
+    //       label: {
+    //         x: game.world.centerX,
+    //         y: game.world.centerY - 70,
+    //         text: `${coinAmount}張彩票進帳囉`,
+    //         style: { font: 'bold 24pt ' + DEFAULT_FONT }
+    //       },
+    //       closeCallback() {
+    //         setTimeout(() => {
+    //           game.input.onDown.addOnce(function() {
+    //             game.state.start('home')
+    //           }, this)
+    //         })
+    //       }
+    //     },
+    //   ]
   };
 
   this.create = function () {
+    var _this5 = this;
+
     this.stage.backgroundColor = '#333';
     game.add.text(game.world.centerX, game.world.centerY - 200, '點擊返回遊戲首頁', {
       fill: '#ffffff',
       font: 'bold 26pt ' + DEFAULT_FONT
     }).anchor.set(0.5);
-
-    if (res.status === 'success') {
-      showPopup(overPopupList[game.rnd.between(0, overPopupList.length - 1)]);
-    } else if (res.status === 'fail') {
-      alert(_errorCenter(res.data.code));
+    setTimeout(function () {
       game.input.onDown.addOnce(function () {
         game.state.start('home');
-      }, this);
-    } else {
-      console.log('Api error');
-    }
+      }, _this5);
+    });
+    showPopup(overPopupList[game.rnd.between(0, overPopupList.length - 1)]); // if(res.status === 'success') {
+    //   showPopup(overPopupList[game.rnd.between(0, overPopupList.length -1)])
+    // } else if ((res.status === 'fail')){
+    //   alert(_errorCenter(res.data.code))
+    //   game.input.onDown.addOnce(function() {
+    //     game.state.start('home')
+    //   }, this)
+    // } else {
+    //   console.log('Api error')
+    // }
 
     isPlayed[dudeMap[overDude].weapon] = true;
   };
@@ -117111,13 +116963,11 @@ function showPopup(current) {
     if (current.closeCallback) current.closeCallback();
   }, this, 2, 1, 0);
   closeBtn.anchor.set(0.5);
-  closeBtn.input.priorityID = 1;
-
-  if (current.action) {
-    actionBtn = game.add.button(current.action.x, current.action.y, 'bn7', current.action.callback, this, 2, 1, 0);
-    actionBtn.anchor.set(0.5);
-    actionBtn.input.priorityID = 1;
-  }
+  closeBtn.input.priorityID = 1; // if(current.action) {
+  //   actionBtn = game.add.button(current.action.x, current.action.y, 'bn7', current.action.callback, this, 2, 1, 0)
+  //   actionBtn.anchor.set(0.5)
+  //   actionBtn.input.priorityID = 1
+  // }
 
   text = game.add.text(current.label.x, current.label.y, current.label.text, Object.assign({
     fill: '#ffffff'
@@ -117141,7 +116991,7 @@ function filterText(text, num) {
     }
   });
 }
-},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/utils/simpleCookies.js":"src/js/utils/simpleCookies.js","/src/js/service/questions.js":"src/js/service/questions.js","/src/js/service/coin.js":"src/js/service/coin.js","./src/assets/icon.png":"src/assets/icon.png","./src/assets/*.png":"src/assets/*.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"phaser-ce/build/custom/pixi":"node_modules/phaser-ce/build/custom/pixi.js","phaser-ce/build/custom/p2":"node_modules/phaser-ce/build/custom/p2.js","phaser-ce/build/custom/phaser-split":"node_modules/phaser-ce/build/custom/phaser-split.js","promise-polyfill/src/polyfill":"node_modules/promise-polyfill/src/polyfill.js","whatwg-fetch":"node_modules/whatwg-fetch/fetch.js","/src/js/utils/jquery-1.7.1.min.js":"src/js/utils/jquery-1.7.1.min.js","/src/js/service/questions.js":"src/js/service/questions.js","./src/assets/icon.png":"src/assets/icon.png","./src/assets/*.png":"src/assets/*.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -117169,7 +117019,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "test.dev2.ruten.com.tw" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "48827" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46745" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
